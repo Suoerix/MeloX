@@ -88,17 +88,16 @@ struct NowPlayingLyricsPage: View {
     private var lyricsStyleContent: some View {
         switch settings.lyricsStyle {
         case .appleMusic:
-            AppleMusicLyricsView(
+            // The Apple-Music-style page now renders with the StarryPlayer
+            // lyrics component; its selection engine tracks the active line
+            // itself, so `highlightedLyricID` is not consumed here.
+            StarryLyricsScreen(
                 lyrics: lyrics,
                 errorMessage: errorMessage,
-                highlightedLyricID: highlightedLyricID,
                 isActive: isActive,
                 isInterfaceHidden: isInterfaceHidden,
                 bottomOverlayHeight: appleMusicBottomOverlayHeight,
-                focusAnchorOffset: focusAnchorOffset,
                 onInterfaceInteraction: onInterfaceInteraction,
-                onInterfaceVisibilityChange:
-                    onInterfaceVisibilityChange,
                 onInitialFocusPrepared: onInitialFocusPrepared
             )
         case .eva:

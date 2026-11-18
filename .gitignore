@@ -19,3 +19,5 @@ vendor/QRCode/build/
 
 vendor/AudioStreaming/.build/
 vendor/AudioStreaming/.swiftpm/
+
+*.build/
